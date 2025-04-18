@@ -11,7 +11,8 @@ Both LSTM models demonstrated comparable or superior performance to transformer-
 
 Using these files:
 - "import-restaurant-ratings" extracts the relevent reviews (restaurants) from the Google Local .json files, to create regionally aggregated csv files storing only restaurant reviews
-- "data-read-state" downsamples (at 1%) these regional files into our main dataset. A train/val/test split is created and saved as "all-states-train", "all-states-val", "all-states-test" datasets found in the /data subfolder. 
+- "data-read-state" downsamples (at 1%) these regional files into our main dataset. A train/val/test split is created and saved as "all-states-train", "all-states-val", "all-states-test" datasets found in the /data subfolder. The -test files contain the predicted probabilities for sentiment analysis from each of the models, the -test-5star file contains predicted star rating probabilities for the LSTM.
 - "lstm-main" contains all code needed to build and train our LSTM model from review data. Checkpoints for these trained models can be found in the /models subfolder, and the saved embedding matrices and vocabulary dictionaries can be found in /embedding-mats.
 - Comparison models for RoBERTa and BERT-base can be built using "roberta-main" and "bert-main". Saved checkpoints for these models are too large to be saved on GitHub, but can be produced upon request. 
 - Additional datasets (e.g., thai restaurants, vegetarian restaurants) are found in the /data subfolder as well
+- "summary-stats" and "data-descriptive-stats" contain additional performance metrics and descriptive statistics for the trained models/datasets used
