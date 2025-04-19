@@ -1,7 +1,7 @@
 # ErdosReviewSentiment
 
 ## Summary
-Using Google review data, we predict the sentiment and star rating based on review text. Our model is trained on review data from restaurants in the US with roughly ~2 million samples taken from the [Google Local Dataset](https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/) produced by Zhang ang Li in 2021 ().
+Using Google review data, we predict the sentiment and star rating based on review text. Our model is trained on review data from restaurants in the US with roughly ~2 million samples taken from the [Google Local Dataset](https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/).
 
 ## Models
 Our main model is a recurrent neural network with long short term memory. This model uses a pre-trained word embedding layer from the [GloVe vector representation of words model](https://nlp.stanford.edu/projects/glove/). Specifically, the corpus of review text is limited to the 20,000 most common words, and the overlap between those and the GloVe words are assembled to build an embedding matrix. The LSTM is bidirectional and can process reviews with a maximum length of 128 words (reviews past that length are truncated).
